@@ -2,8 +2,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
 
 function BasicExample() {
+  //ALL OF THE STYLES NEED TO BE MOVED TO A CSS FILE
+
   return (
     <Container>
       <Navbar fixed="top" expand="lg" style={{ backgroundColor: "white" }}>
@@ -22,7 +25,7 @@ function BasicExample() {
               height: "100px",
               borderRadius: "50%",
             }}
-            href="#home"
+            href="/"
           >
             Logo
           </Navbar.Brand>
@@ -32,10 +35,46 @@ function BasicExample() {
               className="justify-content-end flex-grow-1 pe-3"
               style={{ fontWeight: "bold", padding: "20px", fontSize: "20px" }}
             >
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Contact</Nav.Link>
-              <Nav.Link href="#link">Menu</Nav.Link>
-              <Nav.Link href="#link">About Us</Nav.Link>
+              <Link
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  padding: "5px",
+                }}
+                to="/"
+              >
+                Home
+              </Link>
+              <Link
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  padding: "5px",
+                }}
+                to="/Contact"
+              >
+                Contact
+              </Link>
+              <Link
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  padding: "5px",
+                }}
+                href="#link"
+              >
+                Menu
+              </Link>
+              <Link
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  padding: "5px",
+                }}
+                href="#link"
+              >
+                About Us
+              </Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">

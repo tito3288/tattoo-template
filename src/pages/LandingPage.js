@@ -3,6 +3,7 @@ import NavbarComp from "../components/NavbarComp";
 import Footer from "../components/Footer";
 
 const LandingPage = () => {
+  //ALL OF THE STYLES NEED TO BE MOVED TO A CSS FILE
   return (
     <div>
       <NavbarComp />

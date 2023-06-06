@@ -4,6 +4,8 @@ import React from "react";
 const currentYear = new Date().getFullYear();
 
 const Footer = () => (
+  //ALL OF THE STYLES NEED TO BE MOVED TO A CSS FILE
+
   <Container
     fluid
     style={{
