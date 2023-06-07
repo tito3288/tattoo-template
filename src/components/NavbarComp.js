@@ -3,13 +3,36 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
+import React from "react";
 
 function BasicExample() {
   //ALL OF THE STYLES NEED TO BE MOVED TO A CSS FILE
 
+  const [isTop, setIsTop] = React.useState(true);
+
+  React.useEffect(() => {
+    const scrollListener = () => {
+      setIsTop(window.scrollY < 50); // Modify the number here to adjust the scroll distance
+    };
+
+    window.addEventListener("scroll", scrollListener);
+
+    // Cleanup function to remove the listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+    };
+  }, []); // The empty array ensures this effect runs only once on mount
+
   return (
     <Container>
-      <Navbar fixed="top" expand="lg" style={{ backgroundColor: "white" }}>
+      <Navbar
+        fixed="top"
+        expand="lg"
+        style={{
+          backgroundColor: isTop ? "transparent" : "white",
+          transition: "background-color 0.5s ease", // Here's the transition!
+        }}
+      >
         <Container>
           <Navbar.Brand
             style={{
@@ -38,7 +61,7 @@ function BasicExample() {
               <Link
                 style={{
                   textDecoration: "none",
-                  color: "black",
+                  color: isTop ? "white" : "black",
                   padding: "5px",
                 }}
                 to="/"
@@ -48,7 +71,7 @@ function BasicExample() {
               <Link
                 style={{
                   textDecoration: "none",
-                  color: "black",
+                  color: isTop ? "white" : "black",
                   padding: "5px",
                 }}
                 to="/Contact"
@@ -58,7 +81,7 @@ function BasicExample() {
               <Link
                 style={{
                   textDecoration: "none",
-                  color: "black",
+                  color: isTop ? "white" : "black",
                   padding: "5px",
                 }}
                 href="#link"
@@ -68,7 +91,7 @@ function BasicExample() {
               <Link
                 style={{
                   textDecoration: "none",
-                  color: "black",
+                  color: isTop ? "white" : "black",
                   padding: "5px",
                 }}
                 href="#link"
