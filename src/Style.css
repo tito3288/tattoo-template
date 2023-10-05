@@ -8,10 +8,10 @@ body {
 
 .parallax {
   /* The image used */
-  background-image: url(../public/wallpaper.jpg);
+  background-image: url(https://cdn.shopify.com/s/files/1/0615/9650/0131/articles/tattoo-shop-led-neon-signs-9.png?v=1675217054);
 
   /* Set a specific height */
-  min-height: 900px;
+  min-height: 600px;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;

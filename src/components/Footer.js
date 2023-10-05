@@ -9,7 +9,7 @@ const Footer = () => (
   <Container
     fluid
     style={{
-      backgroundColor: "black",
+      backgroundColor: "#100F0F",
       textAlign: "center",
       padding: "50px 20px",
       bottom: "0",
@@ -17,7 +17,7 @@ const Footer = () => (
       color: "white",
     }}
   >
-    <p>© {currentYear} - My Website</p>
+    <p>© {currentYear} Tattoo Shop</p>
     <p
       style={{ color: "white", textAlign: "left", margin: "0" }}
       className="my-2"
